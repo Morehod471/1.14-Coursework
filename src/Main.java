@@ -1,6 +1,9 @@
 public class Main {
     public static void main(String[] args){
 
+        int index = 15;
+        int depNumber = 1;
+
         EmployeeService employeeService = new EmployeeService();
 
         employeeService.addEmployee("Alex", 2, 12000);
@@ -14,6 +17,7 @@ public class Main {
         employeeService.addEmployee("Ivan", 4, 30000);
         employeeService.addEmployee("Pavel", 2, 60000);
 
+        //employeeService.indexingSalary(index);
         employeeService.outputEmplyees();
         System.out.println();
         employeeService.countTotalSalary();
@@ -24,6 +28,10 @@ public class Main {
         System.out.println();
         employeeService.countAverageSalary();
         System.out.println();
-        employeeService.outputEmplyeesName();
+        //employeeService.outputEmplyeesName();
+        System.out.println();
+        employeeService.findDepLowestSalary(depNumber);
+        System.out.println();
+        employeeService.findDepHighestSalary(depNumber);
     }
 }

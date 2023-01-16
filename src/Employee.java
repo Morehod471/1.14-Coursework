@@ -1,4 +1,5 @@
 public class Employee {
+
     private final String nameSurnamePatronymic;
     private int department;
     private int salary;
