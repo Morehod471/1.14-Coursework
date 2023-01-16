@@ -1,17 +1,29 @@
 public class Main {
     public static void main(String[] args){
 
-        Employee alex = new Employee("Alex", 2, 12000);
-        Employee sarah = new Employee("Sarah", 1, 15000);
-        Employee ken = new Employee("Ken", 3, 30000);
-        Employee bill = new Employee("Bill", 4, 45000);
-        Employee jill = new Employee("Jill", 1, 9000);
-        Employee kevin = new Employee("Kevin", 5, 29000);
-        Employee john = new Employee("John", 2, 16000);
-        Employee sonia = new Employee("Sonia", 3, 27000);
-        Employee ivan = new Employee("Ivan", 4, 30000);
-        Employee pavel = new Employee("Pavel", 2, 60000);
+        EmployeeService employeeService = new EmployeeService();
 
-        System.out.println(alex);
+        employeeService.addEmployee("Alex", 2, 12000);
+        employeeService.addEmployee("Sarah", 1, 15000);
+        employeeService.addEmployee("Ken", 3, 30000);
+        employeeService.addEmployee("Bill", 4, 45000);
+        employeeService.addEmployee("Jill", 1, 9000);
+        employeeService.addEmployee("Kevin", 5, 29000);
+        employeeService.addEmployee("John", 2, 16000);
+        employeeService.addEmployee("Sonia", 3, 27000);
+        employeeService.addEmployee("Ivan", 4, 30000);
+        employeeService.addEmployee("Pavel", 2, 60000);
+
+        employeeService.outputEmplyees();
+        System.out.println();
+        employeeService.countTotalSalary();
+        System.out.println();
+        employeeService.findMinSalary();
+        System.out.println();
+        employeeService.findMaxSalary();
+        System.out.println();
+        employeeService.countAverageSalary();
+        System.out.println();
+        employeeService.outputEmplyeesName();
     }
 }

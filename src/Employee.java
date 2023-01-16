@@ -5,6 +5,7 @@ public class Employee {
     public static int counter = 0;
     private int id;
 
+
     public Employee(String nameSurnamePatronymic, int department, int salary) {
         this.nameSurnamePatronymic = nameSurnamePatronymic;
         this.department = department;
