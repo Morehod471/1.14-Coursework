@@ -1,10 +1,9 @@
 public class Employee {
-    private String nameSurnamePatronymic;
+    private final String nameSurnamePatronymic;
     private int department;
     private int salary;
     public static int counter = 0;
     private int id;
-
 
     public Employee(String nameSurnamePatronymic, int department, int salary) {
         this.nameSurnamePatronymic = nameSurnamePatronymic;

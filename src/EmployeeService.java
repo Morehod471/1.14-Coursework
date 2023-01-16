@@ -9,6 +9,7 @@ public class EmployeeService {
     private Employee employeeWithMaxSalary;
     private int averageSalary;
 
+
     public EmployeeService() {
         this.employees = new Employee[10];
     }
