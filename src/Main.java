@@ -22,6 +22,7 @@ public class Main {
         System.out.println();
         employeeService.countTotalSalary();
         System.out.println();
+
         employeeService.findMinSalary();
         System.out.println();
         employeeService.findMaxSalary();

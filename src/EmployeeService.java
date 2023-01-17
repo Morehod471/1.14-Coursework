@@ -15,6 +15,7 @@ public class EmployeeService {
     public void addEmployee(String nameSurnamePatronymic, int department, int salary) {
         Employee newEmployee = new Employee(nameSurnamePatronymic, department, salary);
         employees[size++] = newEmployee;
+
     }
 
     public void outputEmployees() {
