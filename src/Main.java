@@ -17,8 +17,8 @@ public class Main {
         employeeService.addEmployee("Ivan", 4, 30000);
         employeeService.addEmployee("Pavel", 2, 60000);
 
-        //employeeService.indexingSalary(index);
-        employeeService.outputEmplyees();
+        employeeService.indexingSalary(index);
+        employeeService.outputEmployees();
         System.out.println();
         employeeService.countTotalSalary();
         System.out.println();
@@ -28,7 +28,7 @@ public class Main {
         System.out.println();
         employeeService.countAverageSalary();
         System.out.println();
-        //employeeService.outputEmplyeesName();
+        employeeService.outputEmployeesName();
         System.out.println();
         employeeService.findDepLowestSalary(depNumber);
         System.out.println();

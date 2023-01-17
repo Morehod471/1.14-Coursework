@@ -3,18 +3,13 @@ public class EmployeeService {
     private static Employee[] employees;
     private int size;
     private int totalSalary = 0;
-    private int minSalary;
-    private Employee employeeWithMinSalary;
-    private int maxSalary;
-    private Employee employeeWithMaxSalary;
-    private int averageSalary;
     private int minDepSalary = 1_000_000;
     private Employee employeeOfDepWithLowestSalary;
     private int maxDepSalary = 0;
     private Employee employeeOfDepWithHighestSalary;
 
     public EmployeeService() {
-        this.employees = new Employee[10];
+        employees = new Employee[10];
     }
 
     public void addEmployee(String nameSurnamePatronymic, int department, int salary) {
@@ -22,26 +17,23 @@ public class EmployeeService {
         employees[size++] = newEmployee;
     }
 
-    public void outputEmplyees() {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+    public void outputEmployees() {
+        for (Employee employee : employees) {
             System.out.println(employee);
         }
     }
 
     public void countTotalSalary() {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             totalSalary = totalSalary + employee.getSalary();
         }
         System.out.println("Зарплата всех сотрудников " + totalSalary);
     }
 
     public void findMinSalary() {
-        minSalary = employees[0].getSalary();
-        employeeWithMinSalary = employees[0];
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        int minSalary = employees[0].getSalary();
+        Employee employeeWithMinSalary = employees[0];
+        for (Employee employee : employees) {
             if (minSalary > employee.getSalary()) {
                 minSalary = employee.getSalary();
                 employeeWithMinSalary = employee;
@@ -51,10 +43,9 @@ public class EmployeeService {
     }
 
     public void findMaxSalary() {
-        maxSalary = employees[0].getSalary();
-        employeeWithMaxSalary = employees[0];
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        int maxSalary = employees[0].getSalary();
+        Employee employeeWithMaxSalary = employees[0];
+        for (Employee employee : employees) {
             if (maxSalary < employee.getSalary()) {
                 maxSalary = employee.getSalary();
                 employeeWithMaxSalary = employee;
@@ -64,27 +55,24 @@ public class EmployeeService {
     }
 
     public void countAverageSalary() {
-        averageSalary = totalSalary / size;
+        int averageSalary = totalSalary / size;
         System.out.println("Средняя зарплата всех сотрудников " + averageSalary);
     }
 
-    public void outputEmplyeesName() {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+    public void outputEmployeesName() {
+        for (Employee employee : employees) {
             System.out.println(employee.getNameSurnamePatronymic());
         }
     }
 
     public void indexingSalary(int index) {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             employee.setSalary(employee.getSalary() * (100 + index) / 100);
         }
     }
 
     public void findDepLowestSalary(int depNumber) {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             if (employee.getDepartment() == depNumber) {
                 if (minDepSalary > employee.getSalary()) {
                     minDepSalary = employee.getSalary();
@@ -97,8 +85,7 @@ public class EmployeeService {
     }
 
     public void findDepHighestSalary(int depNumber) {
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (Employee employee : employees) {
             if (employee.getDepartment() == depNumber) {
                 if (maxDepSalary < employee.getSalary()) {
                     maxDepSalary = employee.getSalary();
