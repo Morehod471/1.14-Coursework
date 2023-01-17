@@ -10,6 +10,7 @@ public class Employee {
         this.nameSurnamePatronymic = nameSurnamePatronymic;
         this.department = department;
         this.salary = salary;
+        this.id = counter++;
     }
 
     public String getNameSurnamePatronymic() {
