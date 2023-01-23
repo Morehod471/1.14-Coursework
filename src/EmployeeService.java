@@ -7,6 +7,8 @@ public class EmployeeService {
     private Employee employeeOfDepWithLowestSalary;
     private int maxDepSalary = 0;
     private Employee employeeOfDepWithHighestSalary;
+    private int totalDepSalary;
+    private int depSize = 0;
 
     public EmployeeService() {
         employees = new Employee[10];
@@ -94,8 +96,33 @@ public class EmployeeService {
                 }
             }
         }
-        System.out.println("Наименьшая зарплата в отделе " + depNumber + " у " + employeeOfDepWithHighestSalary);
-
+        System.out.println("Наибольшая зарплата в отделе " + depNumber + " у " + employeeOfDepWithHighestSalary);
     }
 
+    public void countTotalDepSalary(int depNumber) {
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == depNumber) {
+                totalDepSalary = totalDepSalary + employee.getSalary();
+            }
+        }
+        System.out.println("Зарплата всех сотрудников в отделе " + depNumber + " составляет " + totalDepSalary);
+    }
+
+    public void countAverageDepSalary(int depNumber) {
+        for (Employee employee : employees) {
+            if (employee.getDepartment() == depNumber) {
+                depSize++;
+            }
+        }
+        int averageDepSalary = totalDepSalary / depSize;
+        System.out.println("Средняя зарплата в отделе " + depNumber + " составляет " + averageDepSalary);
+    }
+
+    public void outputEmployeesWithSalaryLess(int salaryLowLimit) {
+        for (Employee employee : employees) {
+            if (employee.getSalary() > salaryLowLimit) {
+                System.out.println(employee);
+            }
+        }
+    }
 }
