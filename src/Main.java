@@ -40,5 +40,7 @@ public class Main {
         employeeService.countAverageDepSalary(depNumber);
         System.out.println();
         employeeService.outputEmployeesWithSalaryLess(salaryLowLimit);
+        System.out.println();
+
     }
 }
